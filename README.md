@@ -8,7 +8,9 @@ Quohat Team, chúng mình tin rằng Quohat Flood không chỉ đem lại sự m
 
 Số tài khoản: 9704 2292 0663 8311 692
 (ViettelPay chấp nhận mọi ngân hàng)
+
 Ngân hàng: MB Quân đội
+
 Chủ tài khoản: Huỳnh Bá Quốc
 
 ---
