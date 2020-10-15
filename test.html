@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" href="icon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Quohat Flood</title>
+	<style>
+		*{
+			margin: 0;
+
+		}
+
+		h1{
+			font-size: 99px;
+			font-family: 'Nunito', sans-serif;
+			text-align: center;
+			margin-top: 8%;
+			margin-bottom: 0.2%;
+			color: #007aff;
+		}
+		.note{
+			font-family: 'Nunito', sans-serif;
+			text-align: center;
+			font-size: 20px;
+			color: #007aff;
+
+		}
+		#result{
+			width: 80%;
+			margin: 30px auto;
+			
+			
+		}
+		.btn-primary{
+			margin-top: 33px;
+			height: 80px;
+			width: 280px;
+
+		}
+		
+		th{
+			font-family: 'Nunito', sans-serif;
+		}
+		.btn-success{
+			height: 80px;
+			width: 280px;
+		}
+		.site-footer
+{
+  background-color:#0072ff;
+  padding:20px 0 15px;
+  font-size:15px;
+  line-height:24px;
+  color:#fff;
+}
+.site-footer hr
+{
+  border-top-color:#fff;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  font-family: 'Nunito', sans-serif;
+}
+.site-footer a
+{
+  color:#fff;
+}
+.site-footer a:hover
+{
+  color:#fff;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#fff
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#fff;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#fff;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#fff
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#fff
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+  h1{
+	  font-size: 52px;
+  }
+  .note{
+	  font-size: 18px;
+	  padding-left: 20px;
+	  padding-right: 20px;
+  }
+  .site-footer{
+		margin-top: 5px;
+  }
+  .btn-primary{
+			margin-top: 28px;
+			height: 65px;
+			width: 265px;
+
+	}
+	.btn-success{
+			height: 65px;
+			width: 265px;
+	}
+	h3{
+		font-size: 22px;
+	}
+}
+
+
+		
+		
+
+
+	</style>
+</head>
+<body>
+	<h1>Quohat Flood</h1>
+	<p class="note">Nhấn nút để phát hiện các điểm thiên tai đang ở gần bạn nhất.</p> 
+	
+	<center><button onclick="checkNow()" type="button" class="btn btn-primary"><h3 class="click">Kiểm tra <span class="material-icons">search</span></h3></button></center>
+	<div id="result">
+	<table class="table" style="display: none;">
+		<thead>
+		  <tr class="bg-danger" style="color:#fff">
+			<th scope="col">Khoảng cách</th>
+			<th scope="col">Thiên tai</th>
+			<th scope="col">Khu vực</th>
+		  </tr>
+		</thead>
+		<tbody>
+		</tbody>
+	  </table>
+
+	  <table class="table"  style="display: none;">
+		<thead class="bg-warning">
+		  <tr style="color:#fff">
+			<th scope="col">Khoảng cách</th>
+			<th scope="col">Thiên tai</th>
+			<th scope="col">Khu vực</th>
+		  </tr>
+		</thead>
+		<tbody>
+		</tbody>
+	  </table>
+
+	
+	</div>
+	<div class="reloadHere"></div><br/>
+
+
+
+
+	<script>
+		function checkNow(){
+			document.getElementsByTagName("button")[0].innerHTML = "<h3>Đang tải...</h3>";
+			//document.getElementsByTagName("table")[0].style.display = "table"
+			//document.getElementsByTagName("table")[1].style.display = "table"
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else { 
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				}
+		}
+
+				function showPosition(position) {
+				var mylat =  position.coords.latitude; 
+				var mylong =  position.coords.longitude;
+				fetch('http://vndms.dmc.gov.vn/EventDisaster/TotalEvent?year=2020')
+					.then(response => response.text())
+					.then(data => {
+
+					// Tính khoảng cách 
+					function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+						var R = 6371; // Radius of the earth in km
+						var dLat = deg2rad(lat2 - lat1); // deg2rad below
+						var dLon = deg2rad(lon2 - lon1);
+						var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+						var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+						var d = Math.ceil(R * c); // Distance in km
+						return d;
+					}
+
+					function deg2rad(deg) {
+							return deg * (Math.PI / 180)
+						}
+					/// Kết thúc tính Khoảng cách
+
+					var Data = data;
+					var dataJson = JSON.parse(Data)
+					for (let i = 0; i < dataJson.length; i++) {
+						var today = new Date();
+						var dd = String(today.getDate()).padStart(2, '0');
+						var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+						var yyyy = today.getFullYear();
+
+						today = yyyy + '-' + mm ;
+						document.getElementsByTagName("button")[0].style.display = "none";
+						if(dataJson[i]["time_update"].includes(today) == true){
+							var ketQua_khoangCach = getDistanceFromLatLonInKm(mylat, mylong, dataJson[i]["lat"],  dataJson[i]["lon"]);
+							console.log(ketQua_khoangCach)
+							if(ketQua_khoangCach < 10){
+								document.getElementsByTagName("table")[0].style.display = "table";
+								console.log(ketQua_khoangCach)
+								document.getElementsByTagName("tbody")[0].innerHTML += `
+							<tr>
+								<th scope="row" style="width: 150px;">`+ketQua_khoangCach+` km</th>
+								<td id="name">`+dataJson[i]["name_vn"]+`</td>
+								<td>`+dataJson[i]["kv_anhhuong"]+`</td>
+							</tr>
+							`;
+							}
+							if(ketQua_khoangCach < 30){
+								if(ketQua_khoangCach > 10){
+								document.getElementsByTagName("table")[1].style.display = "table";
+								document.getElementsByTagName("tbody")[1].innerHTML += `
+							<tr>
+								<th scope="row" style="width: 150px;">`+ketQua_khoangCach+` km</th>
+								<td id="name1">`+dataJson[i]["name_vn"]+`</td>
+								<td>`+dataJson[i]["kv_anhhuong"]+`</td>
+							</tr>
+							`;
+								}
+							} else{
+								document.getElementById("result").innerHTML = `
+								<div class="alert alert-success" role="alert">
+								<h4 class="alert-heading">AN TOÀN!</h4>
+								<p>Không có bất kì thiên tai nào đang ở gần bạn.</p>
+								<hr>
+								<p class="mb-0">Quohat Team đang gây quỹ để chung tay ủng hộ đồng bào đang gặp lũ.</p>
+								</div>
+								`
+							}
+
+								
+							}
+						}
+					}
+					)
+					setTimeout(function(){
+							for (let y = 0; y < document.getElementsByTagName("td").length; y++) {
+								if(y%2 == 0){
+									if(document.getElementsByTagName("td")[y].innerText == "null"){
+										document.getElementsByTagName("td")[y].innerText = 'Đang cập nhật...'
+									}
+								}
+								
+							}
+					}, 5000);
+			
+			document.getElementsByClassName("reloadHere")[0].innerHTML = `<center><button type="button" class="btn btn-success" onclick="location.reload()" ><h3>Quay lại <span class="material-icons" style="font-size: 30px;" > settings_backup_restore</span></h3></button></center>`;	
+			}
+		
+		
+	</script>
+	  <!-- Site footer -->
+	  <footer class="site-footer">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-12 col-md-6">
+			  <h6>GÂY QUỸ ỦNG HỘ ĐỒNG BÀO MIỀN TRUNG</h6>
+			  <p class="text-justify">Quohat Team, chúng mình tin rằng Quohat Flood không chỉ đem lại sự mới mẻ mà còn mang lại sự an toàn cho cộng đồng. Số tiền chúng mình thu được từ donate cho Quohat Flood sẽ dùng 100% để ủng hộ đồng bào miền trung. </p>
+			  <p style="margin: 0;">Số tài khoản: 9704 2292 0663 8311 692</p><span>(ViettelPay chấp nhận mọi ngân hàng)</span>
+			  <p style="margin: 0;"></pstyle>Ngân hàng: MB Quân đội</p>
+			  <p style="margin: 0;">Chủ tài khoản: Huỳnh Bá Quốc</p>
+			</div>
+  
+			<div class="col-xs-6 col-md-3">
+			  <h6>Instagram</h6>
+			  <ul class="footer-links">
+				<li><a href="https://www.instagram.com/h_baquoc/">Huỳnh Bá Quốc</a></li>
+				<li><a href="https://www.instagram.com/nhatwtf/">Minh Nhật</a></li>
+				<li><a href="https://www.instagram.com/quohat/">Quohat Team</a></li>
+			  </ul>
+			</div>
+  
+			<div class="col-xs-6 col-md-3">
+			  <h6>Facebook</h6>
+			  <ul class="footer-links">
+				<li><a href="https://www.facebook.com/quocbahuynhtt/">Huỳnh Bá Quốc</a></li>
+				<li><a href="https://www.facebook.com/nhatwtf">Minh Nhật</a></li>
+				<li><a href="http://scanfcode.com/contribute-at-scanfcode/">Quohat Team</a></li>
+				<li><a href="https://www.facebook.com/jbrteam2">JBR-TeaM</a></li>
+				<li><a href="https://www.facebook.com/groups/jbrteam">JBR=Team Community</a></li>
+			  </ul>
+			</div>
+		  </div>
+		  <hr>
+		</div>
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-8 col-sm-6 col-xs-12">
+			  <p class="copyright-text">Nguồn dữ liệu: Hệ thống giám sát thiên tai Việt Nam.
+				<p class="copyright-text">Phát triển bởi Quohat Team & JBR-TeaM.
+			  </p>
+			</div>
+		  </div>
+		</div>
+  </footer>
+	
+
+
+	  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+</body>
+</html>
