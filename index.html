@@ -302,13 +302,15 @@
 
 	<script>
 		function checkNow(){
-			document.getElementsByTagName("button")[0].innerHTML = "<h3>Đang tải...</h3>";
+			document.getElementsByTagName("button")[0].innerHTML = `<div class="spinner-border text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>`;
 			//document.getElementsByTagName("table")[0].style.display = "table"
 			//document.getElementsByTagName("table")[1].style.display = "table"
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(showPosition);
 				} else { 
-					x.innerHTML = "Geolocation is not supported by this browser.";
+					alert("Thiết bị không hỗ trợ!")
 				}
 		}
 
@@ -364,6 +366,7 @@
 								<td>`+dataJson[i]["kv_anhhuong"]+`</td>
 							</tr>
 							`;
+              document.getElementsByClassName("reloadHere")[0].innerHTML = `<center><button type="button" class="btn btn-success" onclick="location.reload()" ><h3>Quay lại <span class="material-icons" style="font-size: 30px;" > settings_backup_restore</span></h3></button></center>`;	
 							}
 							if(ketQua_khoangCach < 30){
 								if(ketQua_khoangCach > 10){
@@ -375,6 +378,7 @@
 								<td>`+dataJson[i]["kv_anhhuong"]+`</td>
 							</tr>
 							`;
+              document.getElementsByClassName("reloadHere")[0].innerHTML = `<center><button type="button" class="btn btn-success" onclick="location.reload()" ><h3>Quay lại <span class="material-icons" style="font-size: 30px;" > settings_backup_restore</span></h3></button></center>`;	
 								}
 							} else{
 								document.getElementById("result").innerHTML = `
@@ -384,7 +388,8 @@
 								<hr>
 								<p class="mb-0">Quohat Team đang gây quỹ để chung tay ủng hộ đồng bào đang gặp lũ.</p>
 								</div>
-								`
+								`;
+                document.getElementsByClassName("reloadHere")[0].innerHTML = `<center><button type="button" class="btn btn-success" onclick="location.reload()" ><h3>Quay lại <span class="material-icons" style="font-size: 30px;" > settings_backup_restore</span></h3></button></center>`;	
 							}
 
 								
@@ -403,7 +408,6 @@
 							}
 					}, 5000);
 			
-			document.getElementsByClassName("reloadHere")[0].innerHTML = `<center><button type="button" class="btn btn-success" onclick="location.reload()" ><h3>Quay lại <span class="material-icons" style="font-size: 30px;" > settings_backup_restore</span></h3></button></center>`;	
 			}
 		
 		
