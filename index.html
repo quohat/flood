@@ -315,7 +315,13 @@
 				function showPosition(position) {
 				var mylat =  position.coords.latitude; 
 				var mylong =  position.coords.longitude;
-				fetch('https://secret-ocean-49799.herokuapp.com/http://vndms.dmc.gov.vn/EventDisaster/TotalEvent?year=2020')
+				fetch("https://secret-ocean-49799.herokuapp.com/http://vndms.dmc.gov.vn/EventDisaster/TotalEvent?year=2020", {
+				      headers : { 
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				       }
+
+				    })
 					.then(response => response.text())
 					.then(data => {
 
