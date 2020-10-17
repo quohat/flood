@@ -1,7 +1,8 @@
 # Quohat Flood
 
 Phát hiện các điểm thiên tai đang ở gần bạn nhất: https://quocbahuynhtt.github.io/flood/
-APP Androind : https://s3.amazonaws.com/gonativeio/static/5f8a40b6b0c772175ab6236d/app-release.apk
+
+Quohat Flood App Androind : http://bit.ly/app-flood
 
 #### Gây quỹ chung tay ủng hộ đồng bài miền trung
 
